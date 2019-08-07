@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% for child in children.css %}
+        <link type="text/css" href="{{ child.name }}">
+    {% endfor %}
+    {% for child in children.js %}
+        <script type="text/javascript" src="{{ child.name }}">
+            {{ child.content }}
+        </script>
+    {% endfor %}
+</head>
+<body>
+{% for child in children.html %}
+    {{ child.content }}
+{% endfor %}
+</body>
+</html>
